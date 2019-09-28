@@ -1,11 +1,11 @@
-FROM ibmjava-alpine as build-deps
+FROM maven:ibmjava-alpine as build-deps
 RUN mkdir -p /app
 WORKDIR /app
 USER root
 COPY . .
 RUN mvn clean package
 
-FROM java:alpine
+FROM openjdk:8-jdk-alpine
 RUN mkdir -p /app
 WORKDIR /app
 COPY --from=build-deps /app/target/*.jar /app/app.jar
