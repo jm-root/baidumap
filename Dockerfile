@@ -9,4 +9,4 @@ FROM openjdk:8-jdk-alpine
 RUN mkdir -p /app
 WORKDIR /app
 COPY --from=build-deps /app/target/*.jar /app/app.jar
-RUN java -jar app.jar
+CMD java -jar app.jar
