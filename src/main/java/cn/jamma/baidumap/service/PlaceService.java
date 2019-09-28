@@ -5,6 +5,7 @@ import com.baidubce.BceClientConfiguration;
 import com.baidubce.auth.DefaultBceCredentials;
 import com.baidubce.services.dumap.DuMapClient;
 import com.baidubce.services.dumap.model.PlaceSearchByRegionParam;
+import com.baidubce.services.dumap.model.ReverseGeocoderParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -49,5 +50,13 @@ public class PlaceService {
                 .pageNum(param.page_num)
                 .build();
         return getClient().placeQuery(appid, params);
+    }
+
+    public String reverseGeocoder(String location){
+        ReverseGeocoderParam param = ReverseGeocoderParam.builder()
+                .location(location)       // 根据经纬度坐标获取地址
+                .output("json")                         // 输出格式为json字符串或者xml字符串
+                .build();
+        return getClient().reverseGeocoder(appid, param);
     }
 }
