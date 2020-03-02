@@ -41,7 +41,7 @@ public class PlaceController {
         } catch (Exception e) {
             e.printStackTrace();
             Map<String, Object> o = new HashMap<String, Object>();
-            o.put("statu", 1);
+            o.put("status", 1);
             o.put("message", e.getMessage());
             return o;
         }
@@ -57,7 +57,7 @@ public class PlaceController {
         } catch (Exception e) {
             e.printStackTrace();
             Map<String, Object> o = new HashMap<String, Object>();
-            o.put("statu", 1);
+            o.put("status", 1);
             o.put("message", e.getMessage());
             return o;
         }
