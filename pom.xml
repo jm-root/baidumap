@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.baidubce</groupId>
             <artifactId>bce-java-sdk</artifactId>
-            <version>0.10.67</version>
+            <version>0.10.131</version>
         </dependency>
 
     </dependencies>
